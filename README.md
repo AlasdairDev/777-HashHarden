@@ -6,7 +6,7 @@
 ---
 
 ## 🔍 Overview
-**777-HashHarden** is a specialized security middleware developed to bridge the gap between untrusted artist submissions and secure label distribution. As a Cybersecurity student and founder of **777heaven Records**, I built this to automate the "cleansing" of music assets (MP3/WAV) before they touch our internal servers.
+**777-HashHarden** is a specialized security middleware developed to bridge the gap between untrusted artist submissions and secure label distribution. As a Cybersecurity student and founder of **777heaven Records**, I built this to automate the "cleansing" of music assets (MP3/WAV) before they touch our internal storage.
 
 This project demonstrates the application of **Digital Forensics**, **Cryptographic Integrity**, and **Zero-Trust architecture** within a real-world business workflow.
 
@@ -22,7 +22,7 @@ The engine ignores file extensions, which can be easily spoofed. Instead, it per
 
 ### 2. Privacy Scrubbing (Metadata Forensics)
 Music files often contain hidden "ghost data"—GPS coordinates, studio file paths, and private artist information. 
-* **MP3:** Wipes ID3v1/v2 tags.
+* **MP3:** Wipes ID3v1/v2 tags using `mutagen`.
 * **WAV:** Strips RIFF metadata chunks.
 * *Outcome:* Ensures 100% digital privacy for artists before their files reach third-party distributors.
 
@@ -38,43 +38,17 @@ All operations—successes and rejected threats—are logged with timestamps in 
 ## 🚀 Getting Started
 
 ### Prerequisites
-* **OS:** Optimized for Linux (**Aurora DX** / Fedora) or Windows.
+* **OS:** Windows or Linux (**Aurora DX** / Fedora).
 * **Language:** Python 3.8+
-* **Library:** Mutagen (Media Forensics)
+* **Library:** Mutagen
 
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_GITHUB_USERNAME/777-HashHarden.git
+git clone [https://github.com/AlasdairDev/777-HashHarden.git](https://github.com/AlasdairDev/777-HashHarden.git)
 
 # Navigate to directory
 cd 777-HashHarden
 
 # Install dependencies
 pip install mutagen
-```
-
-### Usage
-1.  Drop raw artist files into the `/untrusted` directory.
-2.  Run the security engine:
-    ```bash
-    python engine.py
-    ```
-3.  Retrieve your hardened, distribution-ready assets from the `/vault` directory.
-
----
-
-## 📊 Security Pipeline Logic
-
-
-
-1.  **Ingestion:** File received in the `untrusted` zone.
-2.  **Audit:** Signature check vs. File extension.
-3.  **Sanitize:** Metadata stripping (Forensic wipe).
-4.  **Hash:** SHA-256 fingerprint generation.
-5.  **Vault:** Relocation to secure production storage.
-
-
-
-
-
