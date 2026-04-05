@@ -1,3 +1,22 @@
+That is a classic Git quirk\! By default, **Git does not track empty folders**. If those folders are empty on your ThinkPad, Git simply ignores them when you push to GitHub.
+
+Since your code actually has `os.makedirs` at the top, the folders will technically "spawn" the moment someone runs the script, but for a professional GitHub look, we should update the README to explain this automation and show you how to force those folders to appear on your profile.
+
+### 🛠️ The "Secret" to showing empty folders on GitHub
+
+If you want `untrusted/`, `vault/`, and `logs/` to show up on GitHub immediately (even before the script runs), do this in VS Code:
+
+1.  Create a new file inside each of those folders.
+2.  Name the file `.gitkeep` (it can be totally empty).
+3.  Commit and push. Now the folders will stay on your repo\!
+
+-----
+
+### 📝 Updated README.md (Professional Edition)
+
+Copy and paste this. I’ve updated the **Installation** and **Usage** sections to highlight that the tool is "Self-Configuring."
+
+````markdown
 # 🛡️ 777-HashHarden 
 **A Zero-Trust Asset Sanitization & Integrity Pipeline for 777heaven Records.**
 
@@ -52,3 +71,27 @@ cd 777-HashHarden
 
 # Install dependencies
 pip install mutagen
+````
+
+### Usage
+
+This tool is **self-configuring**. On the first run, it will automatically generate the necessary directory structure (`/untrusted`, `/vault`, and `/logs`).
+
+1.  **Initialize/Run the engine:**
+    ```bash
+    python engine.py
+    ```
+2.  **Deposit Assets:** Drop raw artist files into the newly created `/untrusted` directory.
+3.  **Audit:** Run the script again to sanitize and hash the files.
+4.  **Retrieve:** Access your hardened, distribution-ready assets from the `/vault` directory.
+
+-----
+
+## 📊 Security Pipeline Logic
+
+1.  **Ingestion:** File received in the `untrusted` zone.
+2.  **Audit:** Signature check (Magic Bytes) vs. File extension.
+3.  **Sanitize:** Metadata stripping (Forensic wipe).
+4.  **Hash:** SHA-256 fingerprint generation.
+5.  **Vault:** Relocation to secure production storage.
+
