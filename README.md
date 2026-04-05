@@ -1,4 +1,3 @@
-````markdown
 # 🛡️ 777-HashHarden 
 **A Zero-Trust Asset Sanitization & Integrity Pipeline for 777heaven Records.**
 
@@ -53,27 +52,3 @@ cd 777-HashHarden
 
 # Install dependencies
 pip install mutagen
-````
-
-### Usage
-
-This tool is **self-configuring**. On the first run, it will automatically generate the necessary directory structure (`/untrusted`, `/vault`, and `/logs`).
-
-1.  **Initialize/Run the engine:**
-    ```bash
-    python engine.py
-    ```
-2.  **Deposit Assets:** Drop raw artist files into the newly created `/untrusted` directory.
-3.  **Audit:** Run the script again to sanitize and hash the files.
-4.  **Retrieve:** Access your hardened, distribution-ready assets from the `/vault` directory.
-
------
-
-## 📊 Security Pipeline Logic
-
-1.  **Ingestion:** File received in the `untrusted` zone.
-2.  **Audit:** Signature check (Magic Bytes) vs. File extension.
-3.  **Sanitize:** Metadata stripping (Forensic wipe).
-4.  **Hash:** SHA-256 fingerprint generation.
-5.  **Vault:** Relocation to secure production storage.
-
