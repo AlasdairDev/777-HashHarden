@@ -1,21 +1,3 @@
-That is a classic Git quirk\! By default, **Git does not track empty folders**. If those folders are empty on your ThinkPad, Git simply ignores them when you push to GitHub.
-
-Since your code actually has `os.makedirs` at the top, the folders will technically "spawn" the moment someone runs the script, but for a professional GitHub look, we should update the README to explain this automation and show you how to force those folders to appear on your profile.
-
-### 🛠️ The "Secret" to showing empty folders on GitHub
-
-If you want `untrusted/`, `vault/`, and `logs/` to show up on GitHub immediately (even before the script runs), do this in VS Code:
-
-1.  Create a new file inside each of those folders.
-2.  Name the file `.gitkeep` (it can be totally empty).
-3.  Commit and push. Now the folders will stay on your repo\!
-
------
-
-### 📝 Updated README.md (Professional Edition)
-
-Copy and paste this. I’ve updated the **Installation** and **Usage** sections to highlight that the tool is "Self-Configuring."
-
 ````markdown
 # 🛡️ 777-HashHarden 
 **A Zero-Trust Asset Sanitization & Integrity Pipeline for 777heaven Records.**
